@@ -154,3 +154,96 @@ function pingpongChallenge() {
 }
 
 pingpongChallenge();
+
+//11 - Find Minimum Number
+function findMinNumber(arr) {
+    let min = arr[0];
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] < min) {
+            min = arr[i];
+        }
+    }
+    return min;
+}
+console.log(findMinNumber([5, 2, 9, 1, 3]));
+
+//12 - Count Words in a String
+function countWords(str) {
+    return str.trim().split(" ").length;
+}
+console.log(countWords("Hello world from JavaScript"));
+
+//13 - Check Prime Number
+function isPrime(num) {
+    if (num <= 1) return false;
+
+    for (let i = 2; i <= Math.sqrt(num); i++) {
+        if (num % i === 0) return false;
+    }
+    return true;
+}
+console.log(isPrime(7));
+
+//14 - Find Largest String in Array
+function longestString(arr) {
+    let longest = arr[0];
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i].length > longest.length) {
+            longest = arr[i];
+        }
+    }
+    return longest;
+}
+console.log(longestString(["hi", "hello", "javascript"]));
+
+//15 - Sum of Even Numbers
+function sumEven(arr) {
+    let sum = 0;
+    for (let num of arr) {
+        if (num % 2 === 0) sum += num;
+    }
+    return sum;
+}
+console.log(sumEven([1, 2, 3, 4, 5, 6]));
+
+//16 - Reverse Array
+function reverseArray(arr) {
+    let result = [];
+    for (let i = arr.length - 1; i >= 0; i--) {
+        result.push(arr[i]);
+    }
+    return result;
+}
+console.log(reverseArray([1, 2, 3, 4]));
+
+//17 - Check Anagram
+function isAnagram(str1, str2) {
+    let s1 = str1.split("").sort().join("");
+    let s2 = str2.split("").sort().join("");
+    return s1 === s2;
+}
+console.log(isAnagram("listen", "silent"));
+
+//18 - Fibonacci Series (n terms)
+function fibonacci(n) {
+    let fib = [0, 1];
+    for (let i = 2; i < n; i++) {
+        fib.push(fib[i - 1] + fib[i - 2]);
+    }
+    return fib;
+}
+console.log(fibonacci(6));
+
+//19 - Remove Falsy Values
+function removeFalsy(arr) {
+    return arr.filter(Boolean);
+}
+console.log(removeFalsy([0, 1, false, 2, "", 3]));
+
+//20 - Find Second Largest Number
+function secondLargest(arr) {
+    let unique = [...new Set(arr)];
+    unique.sort((a, b) => b - a);
+    return unique[1];
+}
+console.log(secondLargest([10, 20, 4, 45, 99]));
